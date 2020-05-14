@@ -34,10 +34,17 @@ int main()
 			}
 
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Tab) {
-				game->TurnoOnAffichageStatsPlayer();
+				game->TurnOnOffAffichageStatsPlayer(true);
 			}
 			else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Tab) {
-				game->TurnoOffAffichageStatsPlayer();
+				game->TurnOnOffAffichageStatsPlayer(false);
+			}
+
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::I) {
+				game->TurnOnOffAffichageInventairePlayer(false);
+			}
+			else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::I) {
+				game->TurnOnOffAffichageInventairePlayer(true);
 			}
 
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {

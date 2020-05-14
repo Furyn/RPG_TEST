@@ -10,17 +10,19 @@ class GameManager;
 class UI
 {
 public:
-	//UI Affichage stats player
 
-	bool afficherStatsPlayer = false;
+	//UI Affichage stats player
 	UIStats* statsPlayer;
 	UIStats* statsEnemi;
+	bool afficherStatsPlayer = false;
 
 	//UI Affichage du text en combats
 	UICombat* combat;
 
 	//UI Affichage de l'inventaire
 	UIInventaire* inventaire;
+	bool afficherInventairePlayer = false;
+	bool waitKeyReleasedInventaire = true;
 
 public:
 	UI(sf::Font* fontForText);
@@ -29,6 +31,6 @@ public:
 	void AddTextOnCombatScreen(std::string textToAdd);
 	void ClearTextOnCombatScreen();
 	void UpdatePosUi(sf::RenderWindow* window);
-	void DisplayUi(sf::RenderWindow* window, bool fightInProgress, bool onInventory);
+	void DisplayUi(sf::RenderWindow* window, bool fightInProgress);
 };
 

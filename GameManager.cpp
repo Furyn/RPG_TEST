@@ -16,14 +16,22 @@ GameManager::GameManager(Player* _player, sf::RenderWindow* _window, std::string
 	this->combat = new Combat(this->player);
 }
 
-void GameManager::TurnoOnAffichageStatsPlayer()
+void GameManager::TurnOnOffAffichageStatsPlayer(bool setActive)
 {
-	this->ui->afficherStatsPlayer = true;
+	this->ui->afficherStatsPlayer = setActive;
 }
 
-void GameManager::TurnoOffAffichageStatsPlayer()
+void GameManager::TurnOnOffAffichageInventairePlayer(bool KeyReleased)
 {
-	this->ui->afficherStatsPlayer = false;
+	if (!this->ui->waitKeyReleasedInventaire && !KeyReleased) {
+		this->ui->afficherInventairePlayer = !this->ui->afficherInventairePlayer;
+		this->ui->waitKeyReleasedInventaire = true;
+	}
+
+	if (KeyReleased) {
+		this->ui->waitKeyReleasedInventaire = false;
+	}
+
 }
 
 void GameManager::CheckFotTurnPlayer()
@@ -70,7 +78,7 @@ void GameManager::DisplayGame()
 {
 	this->ui->UpdateUI(this);
 	this->ui->UpdatePosUi(this->window);
-	this->ui->DisplayUi(this->window, this->combat->fightInProgress, true);
+	this->ui->DisplayUi(this->window, this->combat->fightInProgress);
 }
 
 void GameManager::DestroyGame()

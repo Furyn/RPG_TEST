@@ -18,8 +18,8 @@ public:
 
 public :
 	GameManager(Player* player, sf::RenderWindow* _window, std::string fontForText);
-	void TurnoOnAffichageStatsPlayer();
-	void TurnoOffAffichageStatsPlayer();
+	void TurnOnOffAffichageStatsPlayer(bool setActive);
+	void TurnOnOffAffichageInventairePlayer(bool KeyReleased);
 	void CheckFotTurnPlayer();
 	void CheckOnClickButton();
 

@@ -49,7 +49,7 @@ void UI::UpdatePosUi(sf::RenderWindow* window)
 	this->inventaire->UpdatePosAllCase(window->getSize().x / 2, window->getSize().y / 2);
 }
 
-void UI::DisplayUi(sf::RenderWindow* window, bool fightInProgress, bool onInventory)
+void UI::DisplayUi(sf::RenderWindow* window, bool fightInProgress)
 {
 	statsPlayer->DisplayUi(window, this->afficherStatsPlayer);
 	if (fightInProgress) {
@@ -57,7 +57,7 @@ void UI::DisplayUi(sf::RenderWindow* window, bool fightInProgress, bool onInvent
 		statsEnemi->DisplayUi(window, false);
 	}
 
-	if (onInventory) {
+	if (this->afficherInventairePlayer) {
 		this->inventaire->DisplayUi(window);
 	}
 }
