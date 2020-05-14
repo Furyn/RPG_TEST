@@ -66,6 +66,9 @@
     <ClCompile Include="UICombat.cpp">
       <Filter>Fichiers sources\UI</Filter>
     </ClCompile>
+    <ClCompile Include="CaseInventaie.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="UICombat.h">
       <Filter>Fichiers d%27en-tête\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="CaseInventaie.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
