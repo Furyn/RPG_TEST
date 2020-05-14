@@ -1,7 +1,11 @@
 #include "UIInventaire.h"
+#include "UIStats.h"
+#include "GameManager.h"
 
 UIInventaire::UIInventaire(sf::Font* fontForText)
 {
+
+	this->statsPlayer = new UIStats(fontForText);
 	this->bordureInventaire.setSize(sf::Vector2f(900, 500));
 	this->bordureInventaire.setOutlineColor(sf::Color::Red);
 	this->bordureInventaire.setOutlineThickness(3);
@@ -37,10 +41,21 @@ void UIInventaire::UpdatePosAllCase(float posX, float posY)
 	}
 }
 
+void UIInventaire::UpdateUI(GameManager* game)
+{
+	statsPlayer->UpdateTextUI(game->player);
+}
+
+void UIInventaire::UpdatePos(float posX, float posY)
+{
+	this->statsPlayer->UpdatePosUi(posX, posY);
+	this->UpdatePosAllCase(posX, posY);
+}
+
 void UIInventaire::DisplayUi(sf::RenderWindow* window)
 {
 	window->draw(this->bordureInventaire);
-
+	statsPlayer->DisplayUi(window, true);
 	std::list<CaseInventaire*>::iterator it = this->listeCaseInventaire.begin();
 	while (it != this->listeCaseInventaire.end()) {
 		(*it)->Display(window);

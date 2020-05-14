@@ -16,11 +16,6 @@ GameManager::GameManager(Player* _player, sf::RenderWindow* _window, std::string
 	this->combat = new Combat(this->player);
 }
 
-void GameManager::TurnOnOffAffichageStatsPlayer(bool setActive)
-{
-	this->ui->afficherStatsPlayer = setActive;
-}
-
 void GameManager::TurnOnOffAffichageInventairePlayer(bool KeyReleased)
 {
 	if (!this->ui->waitKeyReleasedInventaire && !KeyReleased) {

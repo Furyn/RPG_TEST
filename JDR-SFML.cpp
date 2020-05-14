@@ -12,7 +12,7 @@ string getAssetPath();
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "JDR-SFML", sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "RPG-SFML", sf::Style::Fullscreen);
 
 	GameManager* game = new GameManager(new Player("Furyn", ClassCharacter::Mage), &window, getAssetPath() + "\\retro.ttf");
 
@@ -31,13 +31,6 @@ int main()
 		while (window.pollEvent(event)) {
 			if (event.type == sf::Event::Closed || (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)) {
 				window.close();
-			}
-
-			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Tab) {
-				game->TurnOnOffAffichageStatsPlayer(true);
-			}
-			else if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Tab) {
-				game->TurnOnOffAffichageStatsPlayer(false);
 			}
 
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::I) {

@@ -12,7 +12,11 @@ class UI
 public:
 
 	//UI Affichage stats player
-	UIStats* statsPlayer;
+	sf::RectangleShape rectDisplayArea;
+	sf::Text nameClasse;
+	sf::Text textLife;
+	sf::Text textMana;
+
 	UIStats* statsEnemi;
 	bool afficherStatsPlayer = false;
 
