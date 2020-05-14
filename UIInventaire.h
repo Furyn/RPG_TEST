@@ -10,7 +10,8 @@ public:
 	std::list<CaseInventaire*> listeCaseInventaire;
 
 private:
-	int nombreCaseInventaire = 24;
+	int nombreCaseInventaire = 48;
+	int nombreCaseInLigne = 8;
 
 public:
 	UIInventaire(sf::Font* fontForText);

@@ -17,22 +17,22 @@ UIInventaire::UIInventaire(sf::Font* fontForText)
 
 void UIInventaire::UpdatePosAllCase(float posX, float posY)
 {
-
 	this->bordureInventaire.setPosition(posX, posY);
 
 	int nombreCaseParcourue = 0;
 	std::list<CaseInventaire*>::iterator it = this->listeCaseInventaire.begin();
+	float lastPosX = this->bordureInventaire.getPosition().x - this->bordureInventaire.getSize().x / 2;
+	float lastPosY = this->bordureInventaire.getPosition().y - this->bordureInventaire.getSize().y / 2;
 	while (it != this->listeCaseInventaire.end()) {
-		nombreCaseParcourue++;
-		if (nombreCaseParcourue % 3 == 0) {
-			(*it)->UpdatePose(this->bordureInventaire.getPosition().x - this->bordureInventaire.getSize().x / 2 + this->bordureInventaire.getOutlineThickness(), this->bordureInventaire.getPosition().y - this->bordureInventaire.getSize().y / 2 + this->bordureInventaire.getOutlineThickness());
-		}
-		else if (nombreCaseParcourue % 3 == 1) {
-			(*it)->UpdatePose(this->bordureInventaire.getPosition().x - this->bordureInventaire.getSize().x / 2 + this->bordureInventaire.getOutlineThickness() + (*it)->contoureCase.getSize().x + (*it)->contoureCase.getOutlineThickness(), this->bordureInventaire.getPosition().y - this->bordureInventaire.getSize().y / 2 + this->bordureInventaire.getOutlineThickness());
+		if (nombreCaseParcourue % nombreCaseInLigne == 0) {
+			lastPosY += (*it)->contoureCase.getSize().x + (*it)->contoureCase.getOutlineThickness();
+			lastPosX = this->bordureInventaire.getPosition().x - this->bordureInventaire.getSize().x / 2 + (*it)->contoureCase.getSize().x + this->bordureInventaire.getOutlineThickness();
 		}
 		else {
-			(*it)->UpdatePose(this->bordureInventaire.getPosition().x - this->bordureInventaire.getSize().x / 2 + this->bordureInventaire.getOutlineThickness() + 2 * ((*it)->contoureCase.getSize().x + (*it)->contoureCase.getOutlineThickness()), this->bordureInventaire.getPosition().y - this->bordureInventaire.getSize().y / 2 + this->bordureInventaire.getOutlineThickness());
+			lastPosX += (*it)->contoureCase.getSize().x + this->bordureInventaire.getOutlineThickness();
 		}
+		(*it)->UpdatePose(lastPosX, lastPosY);
+		nombreCaseParcourue++;
 		it++;
 	}
 }
