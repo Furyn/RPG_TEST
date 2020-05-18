@@ -65,6 +65,15 @@ void UIInventaire::UpdateUI(GameManager* game)
 
 	std::list<Objet*>::iterator it = game->player->inventaire->inventaire.begin();
 	std::list<CaseInventaire*>::iterator it2 = this->listeCaseInventaire.begin();
+
+	while (it2 != this->listeCaseInventaire.end())
+	{
+		(*it2)->objetInCase = nullptr;
+		it2++;
+	}
+
+	it2 = this->listeCaseInventaire.begin();
+	
 	while (it != game->player->inventaire->inventaire.end())
 	{
 		(*it2)->objetInCase = (*it);
