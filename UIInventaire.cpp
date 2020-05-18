@@ -6,7 +6,7 @@ UIInventaire::UIInventaire(sf::Font* fontForText)
 {
 
 	this->statsPlayer = new UIStats(fontForText);
-	this->bordureInventaire.setSize(sf::Vector2f(900, 500));
+	this->bordureInventaire.setSize(sf::Vector2f(1200, 800));
 	this->bordureInventaire.setOutlineColor(sf::Color::Red);
 	this->bordureInventaire.setOutlineThickness(3);
 	this->bordureInventaire.setFillColor(sf::Color::Black);
@@ -48,7 +48,7 @@ void UIInventaire::UpdateUI(GameManager* game)
 
 void UIInventaire::UpdatePos(float posX, float posY)
 {
-	this->statsPlayer->UpdatePosUi(posX, posY);
+	this->statsPlayer->UpdatePosUi(posX + this->bordureInventaire.getSize().x / 2.5f, posY + this->bordureInventaire.getSize().y / 4.5f );
 	this->UpdatePosAllCase(posX, posY);
 }
 

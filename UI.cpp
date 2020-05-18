@@ -10,7 +10,7 @@ UI::UI(sf::Font* fontForText)
 	this->statsEnemi = new UIStats(fontForText);
 	this->combat = new UICombat(fontForText);
 	this->inventaire = new UIInventaire(fontForText);
-
+	
 	this->rectDisplayArea.setSize(sf::Vector2f(250, 100));
 	this->rectDisplayArea.setOutlineColor(sf::Color::Red);
 	this->rectDisplayArea.setOutlineThickness(3);
@@ -60,6 +60,7 @@ void UI::UpdateUI(GameManager* game)
 	if (game->combat->enemie != nullptr) {
 		statsEnemi->UpdateTextUI(game->combat->enemie);
 	}
+	this->inventaire->UpdateUI(game);
 }
 
 void UI::CheckHoverButton(sf::Vector2f positionMouse, GameManager* game)
@@ -84,7 +85,7 @@ void UI::ClearTextOnCombatScreen()
 
 void UI::UpdatePosUi(sf::RenderWindow* window)
 {
-	this->statsEnemi->UpdatePosUi(this->statsEnemi->rectDisplayArea.getOutlineThickness() + this->statsEnemi->rectDisplayArea.getSize().x, this->statsEnemi->rectDisplayArea.getOutlineThickness());
+	this->statsEnemi->UpdatePosUi(this->statsEnemi->rectDisplayArea.getOutlineThickness() * 2 + this->statsEnemi->rectDisplayArea.getSize().x, this->statsEnemi->rectDisplayArea.getOutlineThickness());
 	this->combat->UpdatePosUi(window, window->getSize().x / 2, window->getSize().y / 3);
 	this->inventaire->UpdatePos(window->getSize().x / 2, window->getSize().y / 2);
 	this->rectDisplayArea.setPosition(sf::Vector2f(window->getSize().x - this->rectDisplayArea.getOutlineThickness(), this->rectDisplayArea.getOutlineThickness()));

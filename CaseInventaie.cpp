@@ -4,7 +4,7 @@
 CaseInventaire::CaseInventaire()
 {
 	this->objetInCase = nullptr;
-	this->contoureCase.setSize(sf::Vector2f(50, 50));
+	this->contoureCase.setSize(sf::Vector2f(75, 75));
 	this->contoureCase.setOutlineColor(sf::Color::Red);
 	this->contoureCase.setOutlineThickness(3);
 	this->contoureCase.setFillColor(sf::Color::Black);

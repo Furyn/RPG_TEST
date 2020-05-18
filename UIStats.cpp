@@ -5,7 +5,7 @@ using namespace std;
 
 UIStats::UIStats(sf::Font* fontForText)
 {
-	this->rectDisplayArea.setSize(sf::Vector2f(250, 210));
+	this->rectDisplayArea.setSize(sf::Vector2f(500, 165));
 	this->rectDisplayArea.setOutlineColor(sf::Color::Red);
 	this->rectDisplayArea.setOutlineThickness(3);
 	this->rectDisplayArea.setFillColor(sf::Color::Transparent);
@@ -75,7 +75,7 @@ void UIStats::UpdatePosUi(float posX, float posY)
 	this->textMana.setPosition(this->textLife.getPosition() + sf::Vector2f(0, this->textLife.getGlobalBounds().height * 2));
 	this->textForce.setPosition(this->textMana.getPosition() + sf::Vector2f(0, this->textMana.getGlobalBounds().height * 2));
 	this->textArmor.setPosition(this->textForce.getPosition() + sf::Vector2f(0, this->textForce.getGlobalBounds().height * 2));
-	this->textDexterity.setPosition(this->textArmor.getPosition() + sf::Vector2f(0, this->textArmor.getGlobalBounds().height * 2));
+	this->textDexterity.setPosition(this->textMana.getPosition() + sf::Vector2f(this->rectDisplayArea.getSize().x / 2, 0));
 	this->textIntelligence.setPosition(this->textDexterity.getPosition() + sf::Vector2f(0, this->textDexterity.getGlobalBounds().height * 2));
 	this->textLuck.setPosition(this->textIntelligence.getPosition() + sf::Vector2f(0, this->textIntelligence.getGlobalBounds().height * 2));
 }
@@ -93,9 +93,9 @@ void UIStats::DisplayUi(sf::RenderWindow* window, bool afficherAllStats)
 		window->draw(this->textDexterity);
 		window->draw(this->textIntelligence);
 		window->draw(this->textLuck);
-		this->rectDisplayArea.setSize(sf::Vector2f(250, 250));
 	}
 	else {
 		this->rectDisplayArea.setSize(sf::Vector2f(250, 100));
+		this->rectDisplayArea.setOrigin(this->rectDisplayArea.getSize().x, 0);
 	}
 }

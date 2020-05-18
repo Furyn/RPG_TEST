@@ -14,8 +14,8 @@ public:
 	UIStats* statsPlayer;
 
 private:
-	int nombreCaseInventaire = 48;
-	int nombreCaseInLigne = 8;
+	int nombreCaseInventaire = 45;
+	int nombreCaseInLigne = 5;
 
 public:
 	UIInventaire(sf::Font* fontForText);
