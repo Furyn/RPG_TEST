@@ -12,6 +12,9 @@ Inventaire::Inventaire()
 
 void Inventaire::AddObjet(Objet* objetToAdd)
 {
+	if (objetToAdd == nullptr) {
+		return;
+	}
 	std::list<Objet*>::iterator it = this->inventaire.begin();
 	while (it != this->inventaire.end()) {
 		Objet* objetSelected = (*it);

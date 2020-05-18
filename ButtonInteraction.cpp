@@ -161,58 +161,64 @@ namespace buttonInteraction {
 		return true;
 	}
 
-	bool EquipePlastron(GameManager* game,Objet* plastron)
+	Objet* EquipePlastron(GameManager* game,Objet* plastron)
 	{
+		Objet* objetToReturn = nullptr;
 		if (plastron->category == CATEGORIE_OBJET::EQUIPEMENT_PLASTRON) {
+			objetToReturn = game->player->inventaire->equipementPlastron;
 			game->player->inventaire->equipementPlastron = plastron;
-			return true;
 		}
-		return false;
+		return objetToReturn;
 	}
 
-	bool EquipeCasque(GameManager* game, Objet* casque)
+	Objet* EquipeCasque(GameManager* game, Objet* casque)
 	{
+		Objet* objetToReturn = nullptr;
 		if (casque->category == CATEGORIE_OBJET::EQUIPEMENT_CASQUE) {
+			objetToReturn = game->player->inventaire->equipementCasque;
 			game->player->inventaire->equipementCasque = casque;
-			return true;
 		}
-		return false;
+		return objetToReturn;
 	}
 
-	bool EquipeGant(GameManager* game, Objet* gant)
+	Objet* EquipeGant(GameManager* game, Objet* gant)
 	{
+		Objet* objetToReturn = nullptr;
 		if (gant->category == CATEGORIE_OBJET::EQUIPEMENT_GANT) {
+			objetToReturn = game->player->inventaire->equipementGant;
 			game->player->inventaire->equipementGant = gant;
-			return true;
 		}
-		return false;
+		return objetToReturn;
 	}
 
-	bool EquipePantalon(GameManager* game, Objet* pantalon)
+	Objet* EquipePantalon(GameManager* game, Objet* pantalon)
 	{
+		Objet* objetToReturn = nullptr;
 		if (pantalon->category == CATEGORIE_OBJET::EQUIPEMENT_PANTALON) {
-			game->player->inventaire->equipementBotte = pantalon;
-			return true;
+			objetToReturn = game->player->inventaire->equipementPantalon;
+			game->player->inventaire->equipementPantalon = pantalon;
 		}
-		return false;
+		return objetToReturn;
 	}
 
-	bool EquipeBotte(GameManager* game, Objet* botte)
+	Objet* EquipeBotte(GameManager* game, Objet* botte)
 	{
+		Objet* objetToReturn = nullptr;
 		if (botte->category == CATEGORIE_OBJET::EQUIPEMENT_BOTTE) {
+			objetToReturn = game->player->inventaire->equipementBotte;
 			game->player->inventaire->equipementBotte = botte;
-			return true;
 		}
-		return false;
+		return objetToReturn;
 	}
 
-	bool EquipeArme(GameManager* game, Objet* arme)
+	Objet* EquipeArme(GameManager* game, Objet* arme)
 	{
+		Objet* objetToReturn = nullptr;
 		if (arme->category == CATEGORIE_OBJET::EQUIPEMENT_ARME) {
+			objetToReturn = game->player->inventaire->equipementArme;
 			game->player->inventaire->equipementArme = arme;
-			return true;
 		}
-		return false;
+		return objetToReturn;
 	}
 
 }

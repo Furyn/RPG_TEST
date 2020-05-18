@@ -13,7 +13,7 @@ string getAssetPath();
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "RPG-SFML"/*, sf::Style::Fullscreen*/);
+	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "RPG-SFML", sf::Style::Fullscreen);
 
 	GameManager* game = new GameManager(new Player("Furyn", ClassCharacter::Mage), &window, getAssetPath() + "\\retro.ttf");
 
@@ -53,8 +53,6 @@ int main()
 			}
 
 		}
-
-		printf("%d\n", game->player->inventaire->inventaire.size());
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 			game->CheckOnClickLeftButton();

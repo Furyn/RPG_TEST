@@ -9,7 +9,7 @@ class CaseInventaire
 public:
 	sf::RectangleShape contoureCase;
 	Objet* objetInCase;
-	bool (*pFunctionToExecuteOnClick)(GameManager*,Objet*);
+	Objet* (*pFunctionToExecuteOnClick)(GameManager*,Objet*);
 
 	bool onHover = false;
 	bool isVisible = false;

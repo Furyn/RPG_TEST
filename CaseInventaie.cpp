@@ -39,8 +39,10 @@ void CaseInventaire::CheckOnHover(sf::Vector2f positionMouse)
 
 void CaseInventaire::OnClick(GameManager* game, Objet* objetToEquipe)
 {
-	if (onHover && isVisible && pFunctionToExecuteOnClick != nullptr && (*pFunctionToExecuteOnClick)(game, objetToEquipe)) {
+	if (onHover && isVisible && pFunctionToExecuteOnClick != nullptr) {
+		Objet* objetRemove = (*pFunctionToExecuteOnClick)(game, objetToEquipe);
 		game->player->inventaire->RemoveObjet(objetToEquipe);
+		game->player->inventaire->AddObjet(objetRemove);
 	}
 }
 
