@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Button.h"
 #include "windows.h"
+#include "CasqueTest.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ string getAssetPath();
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "RPG-SFML", sf::Style::Fullscreen);
+	sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "RPG-SFML"/*, sf::Style::Fullscreen*/);
 
 	GameManager* game = new GameManager(new Player("Furyn", ClassCharacter::Mage), &window, getAssetPath() + "\\retro.ttf");
 
@@ -40,6 +41,10 @@ int main()
 				game->TurnOnOffAffichageInventairePlayer(true);
 			}
 
+			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::A) {
+				game->player->inventaire->AddObjet(new CasqueTest());
+			}
+
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
 				if (!game->combat->fightInProgress) {
 					game->combat->StartCombatWith(new Character("Soldat Impérial", ClassCharacter::Priest));
@@ -49,8 +54,17 @@ int main()
 
 		}
 
+		printf("%d\n", game->player->inventaire->inventaire.size());
+
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-			game->CheckOnClickButton();
+			game->CheckOnClickLeftButton();
+		}
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {
+			game->CheckOnClickRightButton(false);
+		}
+		else {
+			game->CheckOnClickRightButton(true);
 		}
 
 		sf::Vector2f mousePos = window.mapPixelToCoords(sf::Vector2i(mouse.getPosition(window).x, mouse.getPosition(window).y));

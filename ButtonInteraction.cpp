@@ -161,4 +161,58 @@ namespace buttonInteraction {
 		return true;
 	}
 
+	bool EquipePlastron(GameManager* game,Objet* plastron)
+	{
+		if (plastron->category == CATEGORIE_OBJET::EQUIPEMENT_PLASTRON) {
+			game->player->inventaire->equipementPlastron = plastron;
+			return true;
+		}
+		return false;
+	}
+
+	bool EquipeCasque(GameManager* game, Objet* casque)
+	{
+		if (casque->category == CATEGORIE_OBJET::EQUIPEMENT_CASQUE) {
+			game->player->inventaire->equipementCasque = casque;
+			return true;
+		}
+		return false;
+	}
+
+	bool EquipeGant(GameManager* game, Objet* gant)
+	{
+		if (gant->category == CATEGORIE_OBJET::EQUIPEMENT_GANT) {
+			game->player->inventaire->equipementGant = gant;
+			return true;
+		}
+		return false;
+	}
+
+	bool EquipePantalon(GameManager* game, Objet* pantalon)
+	{
+		if (pantalon->category == CATEGORIE_OBJET::EQUIPEMENT_PANTALON) {
+			game->player->inventaire->equipementBotte = pantalon;
+			return true;
+		}
+		return false;
+	}
+
+	bool EquipeBotte(GameManager* game, Objet* botte)
+	{
+		if (botte->category == CATEGORIE_OBJET::EQUIPEMENT_BOTTE) {
+			game->player->inventaire->equipementBotte = botte;
+			return true;
+		}
+		return false;
+	}
+
+	bool EquipeArme(GameManager* game, Objet* arme)
+	{
+		if (arme->category == CATEGORIE_OBJET::EQUIPEMENT_ARME) {
+			game->player->inventaire->equipementArme = arme;
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -2,6 +2,7 @@
 #include "UI.h"
 #include "SFML/Graphics.hpp"
 #include "Player.h"
+#include "Inventaire.h"
 #include "Combat.h"
 
 class GameManager
@@ -20,7 +21,8 @@ public :
 	GameManager(Player* player, sf::RenderWindow* _window, std::string fontForText);
 	void TurnOnOffAffichageInventairePlayer(bool KeyReleased);
 	void CheckFotTurnPlayer();
-	void CheckOnClickButton();
+	void CheckOnClickLeftButton();
+	void CheckOnClickRightButton(bool mouseReleased);
 
 	void UpdateTime(float _deltaTime);
 	void UpdateGame(sf::Vector2f mousePos);

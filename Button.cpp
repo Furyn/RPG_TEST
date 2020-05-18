@@ -1,7 +1,7 @@
 #include "Button.h"
 #include "GameManager.h"
 
-Button::Button(float widthButton, float heightButton, float posX, float posY, std::string textButton, float sizeCharacter, sf::Color colorOutline, sf::Color colorFill, sf::Font* fontForText,bool(*_pFunctionToExecute)(GameManager*), bool (*_pFunctionToExecuteOnHover)(GameManager*))
+Button::Button(float widthButton, float heightButton, float posX, float posY, std::string textButton, float sizeCharacter, sf::Color colorOutline, sf::Color colorFill, sf::Font* fontForText, bool(*_pFunctionToExecute)(GameManager*), bool (*_pFunctionToExecuteOnHover)(GameManager*))
 {
 	this->colorOutline = colorOutline;
 	this->colorFill = colorFill;
@@ -31,7 +31,7 @@ void Button::CheckOnHover(sf::Vector2f positionMouse)
 	float minRectX = this->rectButton.getPosition().x - this->rectButton.getSize().x / 2;
 	float minRectY = this->rectButton.getPosition().y - this->rectButton.getSize().y / 2;
 
-	if ( (positionMouse.x < maxRectX && positionMouse.x > minRectX) && (positionMouse.y > minRectY && positionMouse.y < maxRectY)) {
+	if ((positionMouse.x < maxRectX && positionMouse.x > minRectX) && (positionMouse.y > minRectY && positionMouse.y < maxRectY)) {
 		this->onHover = true;
 	}
 	else {

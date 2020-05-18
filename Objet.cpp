@@ -28,13 +28,16 @@ Objet::Objet(std::string _name, CATEGORIE_OBJET _category, int valueOfBonusStats
 	case CATEGORIE_OBJET::EQUIPEMENT_ARME:
 		this->maxQuantityInInventory = 1;
 		break;
+	case CATEGORIE_OBJET::EQUIPEMENT_PANTALON:
+		this->maxQuantityInInventory = 1;
+		break;
 	default:
-		this->maxQuantityInInventory = 0;
+		this->maxQuantityInInventory = 1;
 		break;
 	}
 
 	this->quantityInInventory = 1;
-	this->circle.setRadius(10);
+	this->circle.setRadius(25);
 	this->circle.setOrigin(this->circle.getRadius(), this->circle.getRadius());
 }
 

@@ -27,6 +27,7 @@ public:
 	UIInventaire* inventaire;
 	bool afficherInventairePlayer = false;
 	bool waitKeyReleasedInventaire = false;
+	bool waitMouseReleasedCaseInventaire = false;
 
 public:
 	UI(sf::Font* fontForText);

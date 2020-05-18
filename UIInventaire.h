@@ -5,6 +5,7 @@
 
 class UIStats;
 class GameManager;
+class Inventaire;
 
 class UIInventaire
 {
@@ -13,8 +14,14 @@ public:
 	std::list<CaseInventaire*> listeCaseInventaire;
 	UIStats* statsPlayer;
 
+	CaseInventaire* casqueEquiper;
+	CaseInventaire* plastronEquiper;
+	CaseInventaire* gantEquiper;
+	CaseInventaire* pantalonEquiper;
+	CaseInventaire* botteEquiper;
+	CaseInventaire* ArmeEquiper;
+
 private:
-	int nombreCaseInventaire = 45;
 	int nombreCaseInLigne = 5;
 
 public:

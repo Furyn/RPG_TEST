@@ -156,6 +156,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonInteraction.cpp" />
     <ClCompile Include="CaseInventaie.cpp" />
+    <ClCompile Include="CasqueTest.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Combat.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="ButtonInteraction.h" />
     <ClInclude Include="CaseInventaie.h" />
+    <ClInclude Include="CasqueTest.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="GameManager.h" />
