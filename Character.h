@@ -22,13 +22,13 @@ public:
 	int mana; //nécessaire pour faire des dégâts magique
 	int luck; //chance de gagner des items plus puissant en pourcentage
 
-	int maxManaBonus;
-	int maxLifeBonus;
-	int forceBonus;
-	int criticalBonus;
-	int armorBonus;
-	int intelligenceBonus;
-	int luckBonus;
+	int maxManaBonus = 0;
+	int maxLifeBonus = 0;
+	int forceBonus = 0;
+	int criticalBonus = 0;
+	int armorBonus = 0;
+	int intelligenceBonus = 0;
+	int luckBonus = 0;
 
 	bool coupCritique = false;
 

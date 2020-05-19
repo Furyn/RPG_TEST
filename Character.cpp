@@ -1,7 +1,7 @@
 #include "Character.h"
 
 Character::Character(std::string _name, ClassCharacter _classCharacter){
-
+    
     this->classCharacter = _classCharacter;
 
 	switch (_classCharacter)
@@ -83,9 +83,9 @@ int Character::DommageOfNormaleAttaque()
 
     if (randomeSuccess > 0.1)
     {
-        dommage = this->force * 1.5;
+        dommage = (this->force + this->forceBonus) * 1.5;
         float randomeCritique = (rand() % 101);
-        if (randomeCritique < this->critical) {
+        if (randomeCritique < this->critical + this->criticalBonus) {
             dommage *= 2;
             coupCritique = true;
         }
@@ -107,7 +107,7 @@ int Character::DommageOfDesperateAttaque()
 
     if (randomeSuccess > 0.5)
     {
-        dommage = this->force * 1.5 * 2;
+        dommage = (this->force + this->forceBonus) * 1.5 * 2;
         coupCritique = true;
     }
     else {
@@ -129,9 +129,9 @@ int Character::DommageOfMagiqueAttaque()
 
     if (randomeSuccess > 0.1)
     {
-        dommage = this->intelligence * 1.5;
+        dommage = (this->intelligence + this->intelligenceBonus) * 1.5;
         float randomeCritique = (rand() % 101);
-        if (randomeCritique < this->critical) {
+        if (randomeCritique < (this->critical + this->criticalBonus ) ) {
             dommage *= 2;
             coupCritique = true;
         }
@@ -148,7 +148,7 @@ int Character::DommageOfMagiqueAttaque()
 
 int Character::TakeDommage(int dommage)
 {
-    int dommageTaken = dommage - this->armor;
+    int dommageTaken = dommage - (this->armor + this->armorBonus);
     if (dommageTaken >= 0) {
         this->life -= dommageTaken;
     }

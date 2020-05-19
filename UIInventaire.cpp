@@ -83,6 +83,27 @@ void UIInventaire::UpdateUI(GameManager* game)
 		case CATEGORIE_OBJET::EQUIPEMENT_CASQUE:
 			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipeCasque;
 			break;
+		case CATEGORIE_OBJET::EQUIPEMENT_PLASTRON:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipePlastron;
+			break;
+		case CATEGORIE_OBJET::EQUIPEMENT_PANTALON:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipePantalon;
+			break;
+		case CATEGORIE_OBJET::EQUIPEMENT_BOTTE:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipeBotte;
+			break;
+		case CATEGORIE_OBJET::EQUIPEMENT_GANT:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipeGant;
+			break;
+		case CATEGORIE_OBJET::EQUIPEMENT_ARME:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::EquipeArme;
+			break;
+		/*case CATEGORIE_OBJET::POTION_VIE:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::PotionDeVie;
+			break;
+		case CATEGORIE_OBJET::POTION_MANA:
+			(*it2)->pFunctionToExecuteOnClick = buttonInteraction::PotionDeMana;
+			break;*/
 		default:
 			(*it2)->pFunctionToExecuteOnClick = nullptr;
 			break;

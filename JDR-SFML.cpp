@@ -47,7 +47,7 @@ int main()
 
 			if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
 				if (!game->combat->fightInProgress) {
-					game->combat->StartCombatWith(new Character("Soldat Impérial", ClassCharacter::Priest));
+					game->combat->StartCombatWith(new Character("Soldat Impérial", ClassCharacter::Warrior));
 					game->ui->ClearTextOnCombatScreen();
 				}
 			}
