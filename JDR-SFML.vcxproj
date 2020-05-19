@@ -159,6 +159,7 @@
     <ClCompile Include="CasqueTest.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Combat.cpp" />
+    <ClCompile Include="EffetEquipement.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventaire.cpp" />
     <ClCompile Include="JDR-SFML.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="CasqueTest.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Combat.h" />
+    <ClInclude Include="EffetEquipement.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Inventaire.h" />
     <ClInclude Include="Objet.h" />

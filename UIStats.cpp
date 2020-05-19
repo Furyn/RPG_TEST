@@ -58,13 +58,13 @@ void UIStats::UpdateTextUI(Character* character)
 		break;
 	}
 
-	this->textLife.setString("HEALTH : " + to_string(character->life) + "/" + to_string(character->maxLife));
-	this->textMana.setString("MANA : " + to_string(character->mana));
-	this->textArmor.setString("ARMOR : " + to_string(character->armor));
-	this->textDexterity.setString("DEXTERITY : " + to_string(character->critical));
-	this->textForce.setString("POWER : " + to_string(character->force));
-	this->textIntelligence.setString("INTELLIGENCE : " + to_string(character->intelligence));
-	this->textLuck.setString("LUCK : " + to_string(character->luck));
+	this->textLife.setString("HEALTH : " + to_string(character->life) + "/" + to_string(character->maxLife + character->maxLifeBonus));
+	this->textMana.setString("MANA : " + to_string(character->mana) + "/" + to_string(character->maxMana + character->maxManaBonus));
+	this->textArmor.setString("ARMOR : " + to_string(character->armor + character->armorBonus));
+	this->textDexterity.setString("DEXTERITY : " + to_string(character->critical + character->criticalBonus));
+	this->textForce.setString("POWER : " + to_string(character->force + character->forceBonus));
+	this->textIntelligence.setString("INTELLIGENCE : " + to_string(character->intelligence + character->intelligenceBonus));
+	this->textLuck.setString("LUCK : " + to_string(character->luck + character->luckBonus));
 }
 
 void UIStats::UpdatePosUi(float posX, float posY)

@@ -22,9 +22,15 @@ public:
 	int mana; //nécessaire pour faire des dégâts magique
 	int luck; //chance de gagner des items plus puissant en pourcentage
 
+	int maxManaBonus;
+	int maxLifeBonus;
+	int forceBonus;
+	int criticalBonus;
+	int armorBonus;
+	int intelligenceBonus;
+	int luckBonus;
+
 	bool coupCritique = false;
-
-
 
 public:
 	Character(std::string _name, ClassCharacter _classCharacter);

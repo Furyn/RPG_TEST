@@ -78,6 +78,9 @@
     <ClCompile Include="CasqueTest.cpp">
       <Filter>Fichiers sources\Objet</Filter>
     </ClCompile>
+    <ClCompile Include="EffetEquipement.cpp">
+      <Filter>Fichiers sources\Objet</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -120,6 +123,9 @@
       <Filter>Fichiers d%27en-tête\Objet</Filter>
     </ClInclude>
     <ClInclude Include="Objet.h">
+      <Filter>Fichiers d%27en-tête\Objet</Filter>
+    </ClInclude>
+    <ClInclude Include="EffetEquipement.h">
       <Filter>Fichiers d%27en-tête\Objet</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
 #include "CaseInventaie.h"
 #include "Objet.h"
 #include "GameManager.h"
+#include "EffetEquipement.h"
 
 CaseInventaire::CaseInventaire()
 {
@@ -42,7 +43,11 @@ void CaseInventaire::OnClick(GameManager* game, Objet* objetToEquipe)
 	if (onHover && isVisible && pFunctionToExecuteOnClick != nullptr) {
 		Objet* objetRemove = (*pFunctionToExecuteOnClick)(game, objetToEquipe);
 		game->player->inventaire->RemoveObjet(objetToEquipe);
-		game->player->inventaire->AddObjet(objetRemove);
+		objetToEquipe->effets->ApplyEffet(game->player);
+		if (objetRemove != nullptr) {
+			game->player->inventaire->AddObjet(objetRemove);
+			objetRemove->effets->RemoveEffet(game->player);
+		}
 	}
 }
 

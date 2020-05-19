@@ -1,9 +1,11 @@
 #include "Objet.h"
+#include "EffetEquipement.h"
 
-Objet::Objet(std::string _name, CATEGORIE_OBJET _category, int valueOfBonusStats)
+Objet::Objet(std::string _name, CATEGORIE_OBJET _category, int maxManaBonus, int maxLifeBonus, int forceBonus, int criticalBonus, int armorBonus, int intelligenceBonus, int luckBonus)
 {
 	this->name = _name;
 	this->category = _category;
+	this->effets = new EffetEquipement(maxManaBonus, maxLifeBonus, forceBonus, criticalBonus, armorBonus, intelligenceBonus, luckBonus);
 
 	switch (_category)
 	{

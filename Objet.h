@@ -14,12 +14,14 @@ enum class CATEGORIE_OBJET
 	EQUIPEMENT_ARME
 };
 
+class EffetEquipement;
+
 class Objet
 {
 public:
 	std::string name;
 	CATEGORIE_OBJET category;
-	int valueOfBonusStats;
+	EffetEquipement* effets;
 
 	int maxQuantityInInventory;
 	int quantityInInventory;
@@ -27,7 +29,7 @@ public:
 	sf::CircleShape circle;
 
 public:
-	Objet(std::string name, CATEGORIE_OBJET category, int valueOfBonusStats);
+	Objet(std::string name, CATEGORIE_OBJET category, int maxManaBonus, int maxLifeBonus, int forceBonus, int criticalBonus, int armorBonus, int intelligenceBonus, int luckBonus);
 	void Display(sf::RenderWindow* window);
 	void UpdatePosToDisplay(float posX, float posY);
 };
