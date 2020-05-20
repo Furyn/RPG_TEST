@@ -164,6 +164,7 @@
     <ClCompile Include="Inventaire.cpp" />
     <ClCompile Include="JDR-SFML.cpp" />
     <ClCompile Include="Objet.cpp" />
+    <ClCompile Include="PlateauJeux.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="UIInventaire.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Inventaire.h" />
     <ClInclude Include="Objet.h" />
+    <ClInclude Include="PlateauJeux.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="UIInventaire.h" />
@@ -189,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagrammeDeClasse.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\Assets\level.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

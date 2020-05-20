@@ -103,6 +103,9 @@ void GameManager::UpdateGame(sf::Vector2f mousePos)
 
 void GameManager::DisplayGame()
 {
+	if (!this->combat->fightInProgress) {
+		this->player->Display(this->window);
+	}
 	this->ui->UpdateUI(this);
 	this->ui->UpdatePosUi(this->window);
 	this->ui->DisplayUi(this->window, this->combat->fightInProgress);

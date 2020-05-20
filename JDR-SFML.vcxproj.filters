@@ -81,6 +81,9 @@
     <ClCompile Include="EffetEquipement.cpp">
       <Filter>Fichiers sources\Objet</Filter>
     </ClCompile>
+    <ClCompile Include="PlateauJeux.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -128,8 +131,16 @@
     <ClInclude Include="EffetEquipement.h">
       <Filter>Fichiers d%27en-tête\Objet</Filter>
     </ClInclude>
+    <ClInclude Include="PlateauJeux.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DiagrammeDeClasse.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\Assets\level.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
   </ItemGroup>
 </Project>

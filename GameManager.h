@@ -13,7 +13,7 @@ public:
 	Combat* combat;
 	sf::RenderWindow* window;
 	sf::Font* fontOftext;
-
+	
 	float totalTime = 0;
 	float deltaTime = 0;
 
